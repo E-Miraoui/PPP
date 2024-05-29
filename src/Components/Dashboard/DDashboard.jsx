@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { Link } from 'react-router-dom';
 import Project from '../ProjectComponent/Project';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import backgroundImage from '../Assets/background.jpg'; // Import the background image
@@ -74,11 +75,11 @@ function DDashboard() {
           </aside>
           <main style={{ marginLeft: '25rem', display: 'flex', flexDirection: 'row', justifyContent: 'center', overflowY: 'scroll' }}>
             <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', margin: '0 auto' }}>
-              <a href="#" style={{ width: '18rem', height: 'auto', border: '1px solid #93a7aa', borderRadius: '10px', justifyContent: 'center', textAlign: 'center', padding: '10px', margin: '20px', color: '#93a7aa', display: 'flex', flexDirection: 'column', backgroundColor: '#fff' }} className="add" >
+            <Link to="/create-project" style={{ width: '18rem', height: 'auto', border: '1px solid #93a7aa', borderRadius: '10px', justifyContent: 'center', textAlign: 'center', padding: '10px', margin: '20px', color: '#93a7aa', display: 'flex', flexDirection: 'column', backgroundColor: '#fff' }} className="add">
                 <div>
                   Add a new project +
                 </div>
-              </a>
+              </Link>
               {
                 projects.length > 0 ? (
                   projects.map((p) => {
