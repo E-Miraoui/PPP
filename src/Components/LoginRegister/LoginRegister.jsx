@@ -19,7 +19,8 @@ const LoginRegister =() => {
     };
 
     return (
-        <div className={`wrapper ${action}`}>
+        <div className="page">
+          <div className={`wrapper ${action}`}>
             <div className="form-box login">
                 <form action="">
                     <h1> Login</h1>
@@ -79,7 +80,8 @@ const LoginRegister =() => {
             </div>
 
 
-        </div> 
+           </div> 
+        </div>  
     )
 };
 

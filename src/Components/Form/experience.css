@@ -7,10 +7,10 @@ body{
 } 
 */
 
-.wrapper {
+.wrapper-experience {
     position: relative;
-    height: 450px; 
-    width: 420px;
+    height: 55%; 
+    width: 90%;
     background: #DBD3D8;
     border-radius: 10px;
     color: black ;
@@ -18,10 +18,11 @@ body{
     align-items: center;
     overflow: hidden;
     transition: height .2s ease;
+    margin-top: 15%;
 
 }
 
-.wrapper .form-box {
+.wrapper-experience .form-box {
     width: 100%;
     padding: 40px;
    
@@ -32,28 +33,16 @@ body{
     height:520px;
 }
 
-.wrapper .form-box.login{
+.wrapper-experience .form-box.education{
 transition: translate .18s ease;
     translate: 0;
 }
 
-.wrapper.active .form-box.login {
+.wrapper.active .form-box.education {
     transition: none;
     translate: -400px;
 }
 
-.wrapper .form-box.register{
-    position: absolute;
-    transition: none;
-    translate: 400px;
-
-
-}
-
-.wrapper.active .form-box.register {
-    transition: translate .18s ease;
-    translate: 0;
-}
 
 
 form h1{
