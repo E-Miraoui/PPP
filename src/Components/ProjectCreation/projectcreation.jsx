@@ -57,7 +57,7 @@ function ProjectCreation() {
       }
 
       setError('');
-      navigate("/dashboard");
+      navigate("/data");
     } catch (error) {
       setError(error.message || 'project not created');
     }

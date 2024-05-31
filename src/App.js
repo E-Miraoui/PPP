@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import SDashboard from './Components/Dashboard/StaticDashboard';
 import DDashboard from './Components/Dashboard/DDashboard';
 import ProjectCreation from './Components/ProjectCreation/projectcreation'; 
@@ -35,6 +34,8 @@ function App() {
       <Route exact path="/data" element={<Formdata/>}></Route>
       <Route exact path="/Education" element={<Education/>}></Route>
       <Route exact path="/experience" element={<Experience/>}></Route>
+      <Route exact path="/dashboard" element={<DDashboard/>}></Route>
+      <Route exact path="/create-project" element={<ProjectCreation/>}></Route>
 
 
 

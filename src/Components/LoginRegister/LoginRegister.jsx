@@ -159,7 +159,8 @@ const LoginRegister = () => {
                 </form>
             </div>
         </div>
+    </div>
     );
-};
+}
 
 export default LoginRegister;
