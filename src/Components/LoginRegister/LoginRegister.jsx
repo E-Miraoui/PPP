@@ -75,7 +75,8 @@ const LoginRegister = () => {
     };
 
     return (
-        <div className={`wrapper ${action}`}>
+        <div className="page">
+          <div className={`wrapper ${action}`}>
             <div className="form-box login">
                 <form onSubmit={handleLoginSubmit}>
                     <h1>Login</h1>

@@ -1,0 +1,125 @@
+
+.welcome .home {
+    position: relative;
+    height: 10%; 
+    width: 100%;
+   
+    border-radius: 10px;
+    ;
+    display: flex;
+    font-size: 35px;
+    font-style: oblique;
+    font-display:center;
+  
+    margin-top: 4%;
+
+
+}
+
+
+.button{
+    width: 20%;
+    height: 45px;
+    background:#FFFFFF ;
+    border: none;
+    outline:none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color:#333;
+    font-weight: 700;
+    position: center;
+    margin-top: 2%;
+    margin-left: 37%;
+}
+
+.welcome-page {
+    position: relative;
+    height: 3%; 
+    width: 50%;
+    
+    border-radius: 10px;
+    color: black ;
+    display: flex;
+    font-size: 30px;
+    font-style: oblique;
+    font-display:center;
+    
+    text-align: center; /* Center the content */
+    padding: 15px; /* Add some padding */
+    margin-top: 7%;
+    margin-left: 25%;
+  }
+  
+  h1 {
+    color:#EBE0C0  ;
+    text-shadow: 
+    -3px -3px 0 black,  
+    3px -3px 0 black,
+    -3px 3px 0 black,
+    3px 3px 0 black;
+    font-size: 2em; /* Adjust font size for the main heading */
+    margin-bottom: 20px; /* Add some space below the heading */
+  }
+  
+  .content-container {
+    background: #d8d3d8;
+    display: flex; /* Arrange content sections side-by-side */
+    justify-content: space-around; /* Distribute sections evenly */
+    flex-wrap: wrap; /* Allow sections to wrap if needed */
+    margin-top: 50px; /* Add some space above the sections */
+    /*padding: 1.2%;*/
+  
+}
+  
+ 
+  
+  /*img {
+    width: 25%; /* Display images at full width within sections 
+    height: 25%;
+    margin-bottom: 0%; /* Add some space below the image 
+  }*/
+  
+  
+  .image-section {
+    display: flex;
+    text-align: center;
+    background-color: #6a8570;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 260px;
+    margin-top: 50px; /* Center the image container for demonstration */
+    padding-right: 2%;
+    margin: 10px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+  }
+  
+  .oval-image {
+    width: 140px; /* Adjust the width as needed */
+    height: 140px; /* Adjust the height as needed to create an oval */
+    border-radius: 50%; /* This creates the oval shape */
+    object-fit: cover; /* Ensures the image covers the container proportionally */
+  }
+  
+  h2 {
+    color: #A5E3B4;
+    text-shadow: 
+    -2px -2px 0 black,  
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    2px 2px 0 black;
+    margin-left: 35%;
+    font-size: 30px; /* Adjust font size for section titles */
+    margin-bottom: 5px; /* Add some space below the titles */
+    margin-top: -1%;
+  }
+  
+  p {
+    font-size: 18px; /* Adjust font size for section text */
+    line-height: 1.5; /* Improve readability with line spacing */
+  }
+  
+  
