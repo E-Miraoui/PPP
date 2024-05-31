@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Project from '../ProjectComponent/Project';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import backgroundImage from '../Assets/background.jpg'; // Import the background image
@@ -9,38 +9,45 @@ function DDashboard() {
   const [user, setUser] = useState(null);
   const [projects, setProjects] = useState([]);
   const token = localStorage.getItem('token');
+  const navigate = useNavigate(); // Initialize useNavigate
+
   useEffect(() => {
     async function fetchUserData() {
-        try {
-          const headers = {
-            'Authorization': `${token}`, // Include the token in the request headers
-            'Content-Type': 'application/json'
-          };
-    
-          // Fetch user information
-          const userInfoResponse = await fetch('http://localhost:8000/profile/info', { headers });
-          const userData = await userInfoResponse.json();
+      try {
+        const headers = {
+          'Authorization': `${token}`, // Include the token in the request headers
+          'Content-Type': 'application/json'
+        };
 
-          setUser(userData);
-    
-          // Fetch user's projects
-          const projectsResponse = await fetch('http://localhost:8000/project/list', { headers });
-          const projectsData = await projectsResponse.json();
-          setProjects(projectsData);
-        } catch (error) {
-          console.error('Error fetching user data:', error);
-        }
+        // Fetch user information
+        const userInfoResponse = await fetch('http://localhost:8000/profile/info', { headers });
+        const userData = await userInfoResponse.json();
+        setUser(userData);
+
+        // Fetch user's projects
+        const projectsResponse = await fetch('http://localhost:8000/project/list', { headers });
+        const projectsData = await projectsResponse.json();
+        setProjects(projectsData);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
       }
-    
-      if (token) {
-        fetchUserData();
-      }
-    }, [token]); // Fetch data when the token changes
+    }
+
+    if (token) {
+      fetchUserData();
+    }
+  }, [token]); // Fetch data when the token changes
+
+  // Handle logout
+  const handleLogout = () => {
+    localStorage.removeItem('token'); // Clear the token from localStorage
+    navigate('/login'); // Redirect to login page
+  };
 
   return (
-    <div className="container-fluid" style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundColor: '#e9edf0', minHeight: '100vh' }}>
       {user && (
-        <div className="row">
+        <div style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
           <aside style={{
             position: 'fixed',
             top: 0,
@@ -69,13 +76,20 @@ function DDashboard() {
                 <button style={{ backgroundColor: '#a7b5b9', color: '#fff', width: '100%', height: 'fit-content', textAlign: 'center', display: 'flex', padding: '10px', margin: 0, cursor: 'pointer', justifyContent: 'center', alignItems: 'center',border: '1px solid #a7b5b9', borderRadius: '10px',fontSize: '1.2em',transition: 'background-color 0.3s'}} onMouseOver={(e) => e.target.style.backgroundColor = '#dbd3d8'} onMouseOut={(e) => e.target.style.backgroundColor = '#a7b5b9'}>Settings</button>
               </li>
               <li>
-                <button style={{ backgroundColor: '#a7b5b9', color: '#fff', width: '100%', height: 'fit-content', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center',padding: '10px', margin: 0, cursor: 'pointer', border: '1px solid #a7b5b9', borderRadius: '10px',fontSize: '1.2em',transition: 'background-color 0.3s' }} onMouseOver={(e) => e.target.style.backgroundColor = '#dbd3d8'} onMouseOut={(e) => e.target.style.backgroundColor = '#a7b5b9'}>Log out</button>
+                <button 
+                  style={{ backgroundColor: '#a7b5b9', color: '#fff', width: '100%', height: 'fit-content', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center',padding: '10px', margin: 0, cursor: 'pointer', border: '1px solid #a7b5b9', borderRadius: '10px',fontSize: '1.2em',transition: 'background-color 0.3s' }} 
+                  onMouseOver={(e) => e.target.style.backgroundColor = '#dbd3d8'} 
+                  onMouseOut={(e) => e.target.style.backgroundColor = '#a7b5b9'}
+                  onClick={handleLogout} // Attach logout handler
+                >
+                  Log out
+                </button>
               </li>
             </ul>
           </aside>
-          <main style={{ marginLeft: '25rem', display: 'flex', flexDirection: 'row', justifyContent: 'center', overflowY: 'scroll' }}>
-            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', margin: '0 auto' }}>
-            <Link to="/create-project" style={{ width: '18rem', height: 'auto', border: '1px solid #93a7aa', borderRadius: '10px', justifyContent: 'center', textAlign: 'center', padding: '10px', margin: '20px', color: '#93a7aa', display: 'flex', flexDirection: 'column', backgroundColor: '#fff' }} className="add">
+          <main style={{ marginLeft: '22rem', flexGrow: 1, display: 'flex', flexDirection: 'column', padding: '20px', overflowY: 'auto' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+              <Link to="/create-project" style={{ width: '18rem', height: 'auto', border: '1px solid #93a7aa', borderRadius: '10px', justifyContent: 'center', textAlign: 'center', padding: '10px', color: '#93a7aa', display: 'flex', flexDirection: 'column', backgroundColor: '#fff' }} className="add">
                 <div>
                   Add a new project +
                 </div>
@@ -83,10 +97,10 @@ function DDashboard() {
               {
                 projects.length > 0 ? (
                   projects.map((p) => {
-                    return (<Project key={p.title} project={p} />)
+                    return (<Project key={p.id} project={p} />)
                   })
                 ) : (
-                  <h1> </h1>
+                  <h1>There are no projects</h1>
                 )
               }
             </div>

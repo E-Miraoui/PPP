@@ -102,7 +102,7 @@ const LoginRegister = () => {
                     </div>
                     <button type="submit">Login</button>
                     <div className="register-link">
-                        <p>Don't have an account yet ? <button type="button" onClick={registerLink}>Sign up</button></p>
+                        <p>Don't have an account yet? <button type="button" onClick={registerLink}>Sign up</button></p>
                     </div>
                 </form>
             </div>
@@ -119,7 +119,7 @@ const LoginRegister = () => {
                             onChange={(e) => setFirstName(e.target.value)}
                             required
                         />
-                        <FaUser className="icon"/>
+                        <FaUser className="icon" />
                     </div>
                     <div className="input-box">
                         <input
@@ -129,7 +129,7 @@ const LoginRegister = () => {
                             onChange={(e) => setLastName(e.target.value)}
                             required
                         />
-                        <FaUser className="icon"/>
+                        <FaUser className="icon" />
                     </div>
                     <div className="input-box">
                         <input
