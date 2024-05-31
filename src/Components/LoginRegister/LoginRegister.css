@@ -9,7 +9,7 @@ body{
 
 .wrapper {
     position: relative;
-    height: 450px; 
+    height: 550px; 
     width: 420px;
     background: #DBD3D8;
     border-radius: 10px;
@@ -29,7 +29,7 @@ body{
 }
 
 .wrapper.wrapper.active{
-    height:520px;
+    height:550px;
 }
 
 .wrapper .form-box.login{
