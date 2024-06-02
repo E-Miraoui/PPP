@@ -10,7 +10,7 @@ Assurez-vous que vous avez les éléments suivants installés sur votre machine 
 
 1. Clonez ce dépôt sur votre machine locale en utilisant git :
     ```bash
-    git clone https://github.com/votre-utilisateur/votre-repo-frontend.git
+    git clone 
     cd votre-repo-frontend
     ```
 2. Installez les dépendances nécessaires :
@@ -28,7 +28,7 @@ Cela démarre le serveur de développement et ouvre votre application dans le na
 
 1. Clonez ce dépôt sur votre machine locale en utilisant git :
     ```bash
-    git clone https://github.com/votre-utilisateur/votre-repo-backend.git
+    git clone 
     cd votre-repo-backend
     ```
 2. Installez les dépendances nécessaires :
