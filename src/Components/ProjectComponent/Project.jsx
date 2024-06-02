@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Project.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
+import cv from '../Assets/cvTemp.png';
 
 function Project({ project }) {
   const [thumbnailUrl, setThumbnailUrl] = useState('');
@@ -32,7 +33,8 @@ function Project({ project }) {
   }, [project.id, token]);*/
 
   const handleView = () => {
-    navigate(`/project-info/${project.id}`);
+    localStorage.setItem('projectId', project.id);
+    navigate(`/view-project`);
   };
 
   const handleEdit = () => {
@@ -41,9 +43,9 @@ function Project({ project }) {
 
   return (
     <div className="ProjectCard">
-      <img src={thumbnailUrl} className="Preview card-img-top" alt="Preview" style={{ margin: 'auto' }} />
+      <img src={cv} className="Preview card-img-top" alt="Preview" style={{ margin: 'auto' }} />
       <div className="card-body">
-        <h1 style={{ textAlign: 'center' }} className="card-title">{project.title}</h1>
+        <h3 style={{ textAlign: 'center' }} className="card-title">{project.title}</h3>
         <p className="card-text">{project.description}</p>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <button 

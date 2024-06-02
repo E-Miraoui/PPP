@@ -63,7 +63,7 @@ function DDashboard() {
             justifyContent: 'space-between'
           }}>
             <div>
-              <div style={{ marginTop: '10%' }}>
+              <div style={{ marginTop: '25%' }}>
                 <h1>{user.firstName} {user.lastName}</h1>
                 <p>{user.email}</p>
               </div>
@@ -87,8 +87,8 @@ function DDashboard() {
               </li>
             </ul>
           </aside>
-          <main style={{ marginLeft: '22rem', flexGrow: 1, display: 'flex', flexDirection: 'column', padding: '20px', overflowY: 'auto' }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+          <main style={{ marginLeft: '22rem', flexGrow: 1, display: 'flex', flexDirection: 'column', padding: '20px', overflowY: 'auto', backgroundImage: `url(${backgroundImage})`, backgroundColor: '#e9edf0', minHeight: '100vh'  }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop : '7%'}}>
               <Link to="/create-project" style={{ width: '18rem', height: 'auto', border: '1px solid #93a7aa', borderRadius: '10px', justifyContent: 'center', textAlign: 'center', padding: '10px', color: '#93a7aa', display: 'flex', flexDirection: 'column', backgroundColor: '#fff' }} className="add">
                 <div>
                   Add a new project +

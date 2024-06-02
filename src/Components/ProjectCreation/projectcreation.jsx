@@ -55,6 +55,7 @@ function ProjectCreation() {
       if (!response.ok) {
         throw new Error(data.message || 'project not created');
       }
+      localStorage.setItem('projectId', data.project.id);
 
       setError('');
       navigate("/data");

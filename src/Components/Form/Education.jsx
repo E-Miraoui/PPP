@@ -7,7 +7,7 @@ import './Education.css';
 
 const Education = () => {
     const [educationData, setEducationData] = useState({
-        instituteName: "",
+        institutionName: "",
         degree: "",
         lastMonth: "",
         lastYear: "",
@@ -40,9 +40,9 @@ const Education = () => {
                         <div className="input-box">
                             <input
                                 type="text"
-                                name="instituteName"
+                                name="institutionName"
                                 placeholder="Institute Name"
-                                value={educationData.instituteName}
+                                value={educationData.institutionName}
                                 onChange={handleChange}
                                 required
                             />

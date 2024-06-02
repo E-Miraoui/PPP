@@ -1,14 +1,14 @@
 .navbar {
     background-color: #EBE0C0; /* Adjust background color */
     color: black; /* Adjust text color */
-    padding: 1rem 2rem; /* Adjust padding */
+    padding: 0.1rem 2rem; /* Adjust padding */
     display: flex;
     justify-content: space-between; /* Align items horizontally */
     position: fixed;
     top: 0;
     left:0;
     width: 100%;
-    z-index: 1000;
+    z-index: 500;
 
     text-align: right;
         
@@ -26,15 +26,14 @@ font-size: 30;
   text-decoration: oblique; /* Remove underline from anchor tag */
     color: inherit; /* Inherit text color from navbar */
 
-    margin-right: 63rem;
+    margin-right: 53rem;
 }
 
 .nav-links {
    
     text-align: right;
     list-style: none; /* Remove default bullet points */
- /* Remove default margin */
-  /* Remove default padding */
+    display: flex; /* Display links horizontally */
 }
 
 .nav-links li {
